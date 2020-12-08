@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { DataService } from "../data.service";
-import { Evento } from "../model/evento";
+import { DataService } from "../../data.service";
+import { Evento } from "../../model/evento";
 
 @Component({
   selector: "app-eventlist",

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  TOKEN_KEY: "token",
+  USER_KEY: "user",
+  API_BASE_PATH: "http://[::1]:3000",
 };
 
 /*

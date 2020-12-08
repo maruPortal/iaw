@@ -1,0 +1,15 @@
+export * from './eventoController.service';
+import { EventoControllerService } from './eventoController.service';
+export * from './eventoOpcionesController.service';
+import { EventoOpcionesControllerService } from './eventoOpcionesController.service';
+export * from './helloController.service';
+import { HelloControllerService } from './helloController.service';
+export * from './opcionesController.service';
+import { OpcionesControllerService } from './opcionesController.service';
+export * from './pingController.service';
+import { PingControllerService } from './pingController.service';
+export * from './userController.service';
+import { UserControllerService } from './userController.service';
+export * from './usuarioController.service';
+import { UsuarioControllerService } from './usuarioController.service';
+export const APIS = [EventoControllerService, EventoOpcionesControllerService, HelloControllerService, OpcionesControllerService, PingControllerService, UserControllerService, UsuarioControllerService];

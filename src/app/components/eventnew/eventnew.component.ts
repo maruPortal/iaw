@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { DataService } from "../data.service";
-import { Evento } from "../model/evento";
+import { DataService } from "../../data.service";
+import { Evento } from "../../model/evento";
 
 @Component({
   selector: "app-eventnew",
