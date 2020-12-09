@@ -5,7 +5,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { EventlistComponent } from "./components/eventlist/eventlist.component";
 import { EventnewComponent } from "./components/eventnew/eventnew.component";
-import { DataService } from "./data.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -15,10 +14,7 @@ import { environment } from "src/environments/environment";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
-// ---
-// import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-// PageNotFoundComponent,
-// ---
+
 @NgModule({
   declarations: [
     AppComponent,

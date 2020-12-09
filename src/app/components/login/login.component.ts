@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.logIn.valid) {
-      //Objeto necesario del schema
       const request = {
         email: this.logIn.value.email,
         password: this.logIn.value.password,
@@ -35,7 +34,7 @@ export class LoginComponent implements OnInit {
 
       this.controllerUser.userControllerLogin(request).subscribe((response) => {
         this.tokerservice.saveToken(response.token);
-        this.activeRouter.navigateByUrl("/");
+        this.activeRouter.navigateByUrl("home");
       });
     }
   }

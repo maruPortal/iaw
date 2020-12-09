@@ -27,19 +27,17 @@ export class RegisterComponent implements OnInit {
 
   registerUser() {
     if (this.register.valid) {
-      //Objeto necesario del schema
       const request = {
         username: this.register.value.username,
         email: this.register.value.email,
         password: this.register.value.password,
       };
-
-      this.controllerUser
-        .userControllerSignUp(request)
-        .subscribe((response) => {
-          this.tokerservice.saveToken(response.token);
-          this.activeRouter.navigateByUrl("/");
-        });
+      this.controllerUser.userControllerSignUp(request).subscribe();
+      const request2 = {
+        email: this.register.value.email,
+        password: this.register.value.password,
+      };
     }
+    this.activeRouter.navigateByUrl("home");
   }
 }

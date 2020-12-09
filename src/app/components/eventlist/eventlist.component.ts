@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { DataService } from "../../data.service";
-import { Evento } from "../../model/evento";
+import { Evento, EventoControllerService } from "src/app/openapi";
+import { TokenserviceService } from "src/app/service/tokenservice.service";
 
 @Component({
   selector: "app-eventlist",
@@ -11,19 +11,25 @@ import { Evento } from "../../model/evento";
 export class EventlistComponent implements OnInit {
   eventos: Evento[];
 
-  constructor(private service: DataService, private router: Router) {}
+  constructor(
+    private auth: TokenserviceService,
+    private controllerEvent: EventoControllerService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.eventos = this.service.getEvents();
+    this.getEvents();
+  }
+
+  getEvents() {
+    this.controllerEvent.eventoControllerFind().subscribe((eventos) => {
+      this.eventos = eventos;
+    });
   }
 
   onRemove(evento: Evento) {
-    this.service.onRemove(evento);
-    this.eventos = this.service.getEvents();
+    this.controllerEvent.eventoControllerDeleteById(evento.id).subscribe();
+    //no refresca bien
+    this.router.navigateByUrl("home");
   }
-
-  // onEdit(evento: Evento) {
-  //   // this.router.navigateByUrl("edit-event");
-  //   this.service.onEdit(evento);
-  // }
 }
